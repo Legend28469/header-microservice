@@ -11,9 +11,11 @@ app.get('/', function (req, res) {
 
 app.get("/api/whoami", function(req, res) {
     var ipAddr = req.headers['x-forwarded-for'];
+    var lang = req.headers["accept-language"];
 
     res.json({
-        ip: ipAddr
+        ip: ipAddr,
+        language: lang
     });
 });
 
