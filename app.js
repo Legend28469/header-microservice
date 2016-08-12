@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get("/api/whoami", function(req, res) {
-    var ipAddr = request.headers['x-forwarded-for'];
+    var ipAddr = req.headers['x-forwarded-for'];
 
     res.json({
         ip: ipAddr
